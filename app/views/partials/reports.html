@@ -1,0 +1,73 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="row">
+
+<div class="col-sm-12">
+  <h1>Reports <small class="text-info">data viewing and processing</small></h1>
+</div>
+	
+<div class="col-sm-12 well well-small"  style="margin-bottom: 16px;">
+  	<form class="form" name="form" ng-submit="view(form)" novalidate>	
+		<table class="">
+			<thead>
+				<th class="">Paquete</th>
+				<th class="span1">T0</th>
+				<th class="span1">T1</th>
+				<th class="span1">T2</th>
+				<th class="span1">T3</th>
+				<th class="span1">T4</th>
+				<th class="span1">T5</th>
+				<th class="span1">T6</th>
+				<th class="span1">T7</th>
+				<th class="span1">T8</th>
+				<th class="span1">T9</th>
+				<th class="span1">Tot</th>
+			</thead>
+			<tbody>
+				<td>
+				<select id="Proporcionpedidos" name="data[Proporcionpedidos][id]"
+					class="span3"
+					data-ng-model="currentItem.Proporcionpedido"
+					data-ng-options="i.cve for i in related.Proporcionpedido"
+				>
+				</select>
+				</td>
+				<td>{{currentItem.Proporcionpedido.t0}}</td>
+				<td>{{currentItem.Proporcionpedido.t1}}</td>
+				<td>{{currentItem.Proporcionpedido.t2}}</td>
+				<td>{{currentItem.Proporcionpedido.t3}}</td>
+				<td>{{currentItem.Proporcionpedido.t4}}</td>
+				<td>{{currentItem.Proporcionpedido.t5}}</td>
+				<td>{{currentItem.Proporcionpedido.t6}}</td>
+				<td>{{currentItem.Proporcionpedido.t7}}</td>
+				<td>{{currentItem.Proporcionpedido.t8}}</td>
+				<td>{{currentItem.Proporcionpedido.t9}}</td>
+				<td>{{currentItem.Proporcionpedido.cant}}</td>
+			</tbody>
+		</table>
+	</form>
+</div>
+
+<button type="button" data-ng-click="getReportData">
+	<i class="icon icon-white icon-ok"></i> OK
+</button>
+</div>
+
+
+
+<div class="row">
+
+<div class="col-sm-12">
+	<div class="gridStyle" ng-grid="gridOptions"></div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+	<div class="col-sm-12 well well-small summary" style="margin-bottom: 16px;">
+		<h4>This is the Report's Summary</h4>
+		<p>There's the Totals</p>
+	</div>
+</div>
